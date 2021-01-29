@@ -2,10 +2,18 @@
 //
 
 #include <iostream>
+#define _USE_MATH_DEFINES
+
 
 int main()
 {
     std::cout << "Hello World!\n";
+    int secondsOfDecember = 31 * 24 * 60 * 60;
+    double radiusOfCircle = 6.2 * 3.14 *2;
+    int integerDevision = 3 / 2;
+    std::cout << "My answers are " << secondsOfDecember << ", " << radiusOfCircle << ", and 3/2 = " << integerDevision <<
+        " so in C it truncates";
+
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
