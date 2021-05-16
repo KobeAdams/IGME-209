@@ -1,8 +1,20 @@
 #include <iostream>
-#include "conio.h"
 #include "snake.h";
+#include "conio.h"
+#include "SFML/Graphics.hpp"
+#include "SFML/Window.hpp"
 #include "Box2D/Box2D.h"
+#include <sstream>
 using namespace std;
+
+
+typedef setupTagrets(setup);
+typedef stopMoving(puase);
+typedef processInput(pInput);
+typedef reverseGravity(invert);
+typedef newTarget (*selectedNextTarget)();
+
+
 
 int main()
 {
@@ -39,16 +51,50 @@ int main()
 	target.x = 1.5;
 	target.y = 1.2;
 	int key = 0;
+	string in = "";
+	
+	int input = 0;
+	
 	do
 	{
+		std::cout << "how many targets would you like? From 1 to 10";
+		getline(cin,in);
+		std::stringstream ss(in);
+		ss >> input;
+		if (input > 10 || input < 0)
+		{
+			std:: cout << "Invalid Input, please input from 1 to 10";
+		}
+		else
+		{
+			break;
+		}
+
+	} while (input > 10 || input < 1);
+	
+
+	setup * setUP;
+	bool moreTargets = true;
+	newTarget* refresh;
+
+	setUP(input);
+	do
+	{
+		processInput;
+
+
+		moreTargets = refresh;
+	} while (moreTargets==true);
+	
+	
+	//do
+	//{
 		
-		b2Vec2 position = snake->GetPosition();
+		/*b2Vec2 position = snake->GetPosition();
 		float angle = snake->GetAngle();
 		bool hit = false;
-		key = _getch();
-		if (key==97||key==119||key==115||key==100)
-		//if(_kbhit())
-			applyForces(snake, key);
+		
+		
 		
 		if (abs(target.x - position.x) <= 0.05 && abs(target.y - position.y) <= 0.05)
 			hit = true;
@@ -64,8 +110,8 @@ int main()
 			moveTarget(x,y, target);
 			score++;
 		}
-		cout << "\n";
-	} while (score <10||key != 27);
+		cout << "\n";*/
+	//} while (score <10&&key != 27);
 
 	cout << "you've hit the escape key! Time to end the program";
 }
