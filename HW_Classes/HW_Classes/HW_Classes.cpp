@@ -14,7 +14,6 @@ int main()
     cout << "The 9th great player war begins!\n\n";
 
     //Fighter p1 = Fighter();
-    
     //Player p2 = Player(name, 20, 18, 6);
    // Player* p3 = new Player();
     Fighter* p4 = new Fighter(name2, 20, 17, 17,17);

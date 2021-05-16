@@ -8,7 +8,6 @@ public:
 	~Player();
 	const char* getName();
 	virtual void Attack(Player* player);
-	
 private:
 	const char* name;
 	int str, dex, wis;
